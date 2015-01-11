@@ -1,12 +1,12 @@
 ---
     name: "st2_upgrade_master_12h"
-    description: "Upgrade StackStorm on staging hosts nightly"
+    description: "Upgrade StackStorm on staging host every 12 hours"
     enabled: true
     trigger:
         type: "core.st2.IntervalTimer"
         parameters:
-            hour: "hours"
-            minute: 12
+            unit: "hours"
+            delta: 12
     criteria: {}
     action:
         ref: "st2cd.st2_upgrade"
